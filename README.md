@@ -1,1 +1,0 @@
-# paradigmas-de-programacion-II
