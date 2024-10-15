@@ -1,5 +1,5 @@
-# comentarios una linea
-"""
+# comentarios una línea
+""" Comentarios de muchas líneas
 Amelia Mendoza López
 Descripción: Primer "Hola Mundo" en python
 Fecha:09/10/2024
