@@ -30,6 +30,7 @@ Almacena un dato de tipo String -> numero1_cadena = input("Introduce un número 
 Pasa el dato de tipo String a Flotante -> numero1_float = float(numero1_cadena)
 esto permite realizar la adicion de una cantidad a otra
 '''
+#
 # Comentar por qué se realiza el casting de variables.
 numero1_float = float(numero1_cadena)
 numero2_float = float(numero2_cadena)
