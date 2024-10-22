@@ -5,7 +5,7 @@ Descripción:Entrada de datos por consola para interactuar con el usuario con va
 '''
 
 # Comentar sobre la función input.
-#
+
 numero1_cadena = input(
     "Introduce un número decimal: ")  # La variable "numero1_cadena" almacenará un dato de tipo cadena
 numero2_cadena = input(
