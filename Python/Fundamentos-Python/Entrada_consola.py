@@ -4,7 +4,6 @@ Fecha: 19/10/2024
 Descripción:Entrada de datos por consola para interactuar con el usuario con valores dinámicos.
 '''
 #
-
 # Comentar sobre la función input.
 
 numero1_cadena = input(
