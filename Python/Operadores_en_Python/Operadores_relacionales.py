@@ -7,6 +7,12 @@ números flotantes
 '''
 
 print("**************** OPERADORES RELACIONALES ****************")
+'''
+CONCEPTO:Los operadores relacionales se utilizan en programación
+ para comparar dos valores y establecer la relación que tienen. 
+El resultado de la comparación es un valor booleano 
+(verdadero o falso)  si la comparación llegará a ser cierta o falsa
+'''
 # Se aplica un casting de variables para tomar el valor flotante de la cadena
 num_uno = float(input("Ingrese el primer valor decimal: "))
 num_dos = float(input("Ingrese el segundo valor decimal: "))
