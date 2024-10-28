@@ -5,7 +5,7 @@ Descripción: Determina el comportamiento del if y tabuladores en Python
 '''
 
 print("*************MAYORES DE EDAD***********")
-#Se realiza un castinf de variables (cadena-entero)
+#Se realiza un casting de variables (cadena-entero)
 #y se almacena en la variable "edad"
 edad = int(input("Ingresa tu edad: "))
 
