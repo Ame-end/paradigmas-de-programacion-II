@@ -21,5 +21,5 @@ cadena_profesor = input("¿Es profesor de la UNSIJ?: ")
 # el resultado booleano se almacena en la variable "profesor"
 profesor = cadena_profesor.lower() == "si"
 
-# Si la varible 'estudiante' o 'profesor' es verdadero, el resultado será True
+# Si la varible 'estudiante' o 'profesor' es verdadero, el resultado será true
 print(f"¿Pertenece a la comunidad de la UNSIJ?: {estudiante or profesor}")
