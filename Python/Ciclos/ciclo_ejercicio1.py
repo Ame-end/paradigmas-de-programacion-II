@@ -1,7 +1,7 @@
 '''
 Nombre: Amelia Mendoza López
 Fecha:24/10/2024
-Descripción:
+Descripción:Suma acumulativa de dos valores
 '''
 
 print("********* CICLOS *********")
