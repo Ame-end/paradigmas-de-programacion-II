@@ -17,7 +17,7 @@ num_dos = float(input("Ingresa el primer valor decimal: "))
 # Se establecen condiciones para determinar el rango de ambos números
 if num_uno > num_dos:
     print(f"El número {num_uno} es mayor que {num_dos}.")
-elif num_uno < num_dos:
+elif num_uno < num_dos: # "elif" sustituye a "else if"
     print(f"El número {num_uno} es menor que {num_dos}.")
 else:
     print("Los dos números son iguales.")
