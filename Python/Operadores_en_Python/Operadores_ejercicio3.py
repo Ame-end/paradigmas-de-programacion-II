@@ -12,6 +12,7 @@ Problema:
     d) Muestre el resultado en consola con valor booleano (true/false)
     nota: No se implementará "lower"
 '''
+print("************ Autentificación del usuario ************")
 
 # Declaración de usuario y contraseña constantes
 usuario_interno = "usuario01"
