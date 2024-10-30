@@ -33,5 +33,5 @@ if dia_semana =="lunes" or dia_semana=="martes" or dia_semana=="jueves":
 
 # Muestra los detalles del cliente y el costo total
 print(f"La reserva para {nombre}:")
-print(f"Día de la visita: {dia_semana.capitalize()}")
+print(f"Día de la visita: {dia_semana}")
 print(f"Total a pagar: ${costo_total:.2f}")
