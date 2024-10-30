@@ -1,7 +1,7 @@
 '''
 Nombre: Amelia Mendoza López
 Fecha:24/10/2024
-Descripción: Implementación de
+Descripción: Implementación de condicionales
 '''
 
 print("************* RESTRICCIÓN DE EDAD***********")
