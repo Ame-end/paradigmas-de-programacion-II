@@ -24,6 +24,7 @@ while iterador <= VALOR_FINAL:
     elif iterador % 5 == 0:
         numeracion = "Informática"
     else:
+
         numeracion = iterador
 
     print(numeracion, end=", ")
