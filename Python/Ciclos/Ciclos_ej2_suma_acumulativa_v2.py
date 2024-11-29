@@ -22,5 +22,5 @@ while i <= num_dos:
     print(i, end=" ")            # Imprime el valor actual de 'i' en la misma línea
     acumulador = acumulador + i   # Agrega el valor de 'i' al acumulador
     i = i + 1                     # Incrementa 'i' en 1 para la siguiente iteración
-print()  # Salto de línea final
+print()
 print(f"La suma del {num_uno} hasta {num_dos} es: {acumulador}")
