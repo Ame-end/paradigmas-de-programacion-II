@@ -1,10 +1,8 @@
-# Información del programa
-# Nombre: Amelia Mendoza López
-# Fecha: 24/10/2024
-# Descripción: Este programa utiliza ciclos `while` para imprimir números en secuencia. 
-# En el primer ejemplo, se imprime una secuencia desde 1 hasta un número ingresado por el usuario.
-# En el segundo ejemplo, se imprime una secuencia de números pares hasta un número dado.
-
+'''
+Nombre: Amelia Mendoza López
+Fecha: 24/10/2024
+Descripción: Este programa utiliza ciclos "while" para imprimir números en secuencia.
+'''
 print("********* CICLOS *********")
 print("********  while  *******")
 print("********  EJEMPLO 1 *******")
