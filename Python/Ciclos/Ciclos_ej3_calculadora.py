@@ -8,8 +8,8 @@ print("************ CALCULADORA ************")
 
 # Se realiza el casting de variables para realizar la conversión
 # de la parte cadena a entero
-numero1 = int(input("Ingresa el primer número: "))
-numero2 = int(input("Ingresa el segundo número: "))
+numero1 = int(input("Ingresa el primer número: ")) #Casteo de varibles cadena-entero
+numero2 = int(input("Ingresa el segundo número: ")) #Cateo de variables cadena-entero
 
 print("Suma....[1]")
 print("Resta....[2]")
