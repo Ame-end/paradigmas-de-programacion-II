@@ -20,7 +20,7 @@ while i != 0:
         print(f"Tu saldo es de ${saldo_usuario}")
     elif op == 2:
         # Ingresar el dinero
-        dinero_ingresado = float(input("Ingrese cantidad: "))
+        dinero_ingresado = float(input("Ingrese cantidad: ")) #Casteo de variables para asignar cantidades exactas
         # Actualiza el valor del saldo
         saldo_usuario += dinero_ingresado
         print(f"Saldo actual: ${saldo_usuario}")
