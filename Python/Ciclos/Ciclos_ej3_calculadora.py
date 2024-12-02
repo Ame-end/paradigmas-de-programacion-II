@@ -1,7 +1,7 @@
 '''
 Nombre: Amelia Mendoza López
 Fecha: 20/10/2024
-Descripción: Se realiza un calculadora para ejemplicar el comportamiento del ciclo while
+Descripción: Se realiza un calculadora para ejemplicar el comportamiento de las funciones
 '''
 
 print("************ CALCULADORA ************")

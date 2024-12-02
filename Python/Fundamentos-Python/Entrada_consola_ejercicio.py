@@ -8,7 +8,7 @@ Ejercicio:
 a) Pida 2 números decimales por consola al usuario utilizando la función input.
 b) Muestre los resultados de las operaciones básicas con esos números: suma, resta, multiplicación y división
 '''
-
+#
 print("**************** OPERACIONES BÁSICAS ****************")
 print("**************** números decimal ****************")
 # Se realiza un  casting de variables donde se extraen valores flotantes para ambas cadenas
