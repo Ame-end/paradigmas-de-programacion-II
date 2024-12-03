@@ -15,66 +15,65 @@ RIFA DE LAPTOP 503
 5)Salir
 '''
 
-
-
 import random
 
-# Lista de participantes
-participantes = []
 
-# Función para mostrar el menú
-def MENU():
-    print("--- RIFA DE LAPTOP 503 ---")
-    print("1. Ver participantes")
-    print("2. Añadir participante")
-    print("3. Eliminar participante")
-    print("4. Seleccionar al ganador")
-    print("5. Salir")
+def main():
+    participantes = set()
 
-# Bucle principal
-while True:
-    MENU()
-    opcion = input("Selecciona una opción: ")
+    while True:
+        print("***  Rifa de una computadora  ***")
+        print("1) Ver correos de participantes")
+        print("2) Agregar correo de participante")
+        print("3) Eliminar correo de participante")
+        print("4) Seleccionar ganador")
+        print("0) Salir")
 
-    if opcion == "1":  # Ver participantes
-        if not participantes:
-            print("No se han registrado participantes aún")
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == "1":
+            if participantes:
+                print("Participantes:")
+                for correo in participantes:
+                    print(f" {correo}")
+            else:
+                print("No hay participantes registrados.")
+
+        elif opcion == "2":
+            correo = input("Ingrese el correo del participante: ")
+            if correo in participantes:
+                print("El correo ya está registrado.")
+            else:
+                participantes.add(correo) #Si el correo no existiese, se deberá agregar
+                #se utilizará '.add'
+                print("Correo agregado con éxito.")
+
+        elif opcion == "3":
+            correo = input("Ingrese el correo del participante a eliminar: ")
+            if correo in participantes:
+                participantes.remove(correo) #Se eliminará el correo del participante
+                #se utilizará '.remove'
+                print("Correo eliminado con éxito.")
+            else:
+                print("El correo no está registrado.")
+
+        elif opcion == "4":
+            if participantes:
+                ganador = random.choice(list(participantes))
+                '''
+                ->list(participantes): convierte el conjunto de participantes en una lista
+                ->random.choice(lista). Selecciona un elemnto al azar en la lista
+                
+                Se le es asignado a ganador
+                '''
+                print(f"¡El ganador es: {ganador}!")
+            else:
+                print("No hay participantes registrados para elegir un ganador.")
+
+        elif opcion == "0":
+            print("Saliendo del programa. ¡Gracias por participar!")
+            break
+
         else:
-            print(f"Participantes registrados ({len(participantes)}):")
-            for i, nombre in enumerate(participantes, start=1):
-                print(f"{i}. {nombre}")
+            print("Opción no válida. Intente de nuevo.")
 
-    elif opcion == "2":  # Añadir participante
-        nombre = input("Ingresa el nombre del participante: ").strip()
-        if nombre in participantes:
-            print("Este participante ya está registrado.")
-        else:
-            participantes.append(nombre)
-            print(f"{nombre} ha sido añadido.")
-
-    elif opcion == "3":  # Eliminar participante
-        if not participantes:
-            print("No hay participantes registrados para eliminar.")
-        else:
-            try:
-                for i, nombre in enumerate(participantes, start=1):
-                    print(f"{i}. {nombre}")
-                indice = int(input("Ingresa el número del participante a eliminar: ")) - 1
-                eliminado = participantes.pop(indice)
-                print(f"{eliminado} ha sido eliminado.")
-            except (ValueError, IndexError):
-                print("Número inválido.")
-
-    elif opcion == "4":  # Seleccionar ganador
-        if not participantes:
-            print("No hay participantes para seleccionar un ganador.")
-        else:
-            ganador = random.choice(participantes)
-            print(f"\n¡El ganador es: {ganador}!")
-
-    elif opcion == "5":  # Salir
-        print("¡Gracias por participar en la rifa! Hasta luego.")
-        break
-
-    else:
-        print("Opción no válida. Intenta de nuevo.")
