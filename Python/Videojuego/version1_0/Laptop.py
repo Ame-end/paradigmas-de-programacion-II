@@ -3,30 +3,42 @@ from pygame.sprite import Sprite
 #De la clase pygame se importa el Sprite-herencia
 
 class Laptop(Sprite):
+    # Se define el constructor de la Laptop que hereda del constructor del Sprite.
+    def __init__(self, esc_alumnos_conf, screen, alumno):
+        # Se llama al constructor de la clase Sprite
+        super(Laptop, self).__init__()
 
-    def __init__(self,esc_alumnos_config,alumno,screen):
-        super(Laptop,self).__init__()#Se llama al constructor
-        self.esc_alumnos_config = esc_alumnos_config
-        self.screen=screen #
-        self.alumno=alumno
+        # Se asignan los objetos de las configuraciones, la pantalla y del alumno.
+        self.esc_alumnos_config = esc_alumnos_conf
+        self.screen = screen
+        self.alumno = alumno
 
-        self.image = pygame.image.load("../media/back.png")
-        self.lap_rect = self.image.get_rect() #rectangulo para la laptop
-        self.alumno_rect = self.alumno.get_rect()  #Se crea un rectangulo para el alumno
+        # Se carga la imagen y obtiene el Rect (se utiliza para representar coordenadas rectangulares).
+        self.laptop_image = pygame.image.load("../media/laptop.png")
+        self.laptop_rect = self.laptop_image.get_rect()
+        self.screen_rect = screen.get_rect()
 
-        #Posición Inicial de la laptop
-        self.lap_rect.centerx=self.alumno_rect.centerx
-        self.lap_rect.bottom=self.alumno_rect.top
+        # Posición inicial de la laptop (centrado con el alumno).
+        self.laptop_rect.centerx = self.alumno.image_rect.centerx
+        self.laptop_rect.top = self.alumno.image_rect.top
 
-        #Velocidad
-        self.image_rect_centerx = float(self.lap_rect.centerx)#obtiene el centro de la imagen
-        self.image_rect_centery = float(self.lap_rect.centery)
+        # Centros del rectángulo utilizando variables flotantes.
+        self.laptop_rect_centerx = float(self.laptop_rect.centerx)
+        self.laptop_rect_centery = float(self.laptop_rect.centery)
 
-        #Declara la velocidad y asignarle
+        # Velocidad de la laptop obtenida de las configuraciones.
         self.laptop_speed = self.esc_alumnos_config.laptop_speed
 
-        def update(self):
-            self.laptop_rect_centery -= self.laptop_speed
-            self.laptop_rect.centery =self.laptop_rect_centery
-        del blitme(self):
-            self.screen.blit(self.image,self.lap_rect)
+    # Méto.do para actualizar la posición del alumno.
+    # Al salir disparada la laptop, se debe actualizar únicamente la posición en el eje-y.
+    # Por lo tanto, se debe restar un valor para que la dirección sea hacia arriba.
+    def update_pos(self):
+        # Se actualiza el valor decimal de la posición.
+        self.laptop_rect_centery -= self.laptop_speed
+
+        # Se actualiza el valor de la posición del Rect de la laptop.
+        self.laptop_rect.centery = self.laptop_rect_centery
+
+
+    def blitme(self):
+        self.screen.blit(self.laptop_image, self.laptop_rect)
