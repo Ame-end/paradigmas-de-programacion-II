@@ -15,22 +15,29 @@ pygame.display.set_caption("LapRun")
 
 # Clase para manejar el fondo con efecto de paralaje
 class Background:
-    def __init__(self, images, screen_width):
-        self.images = [pygame.image.load(img).convert_alpha() for img in images]
-        self.bg_width = self.images[0].get_width()
+    def __init__(self, images, screen_width, screen_height):
+        # Redimensiona las imágenes al tamaño de la pantalla
+        self.images = [
+            pygame.transform.scale(pygame.image.load(img).convert_alpha(), (screen_width, screen_height))
+            for img in images
+        ]
         self.screen_width = screen_width
 
     def draw(self, screen, scroll):
         for x in range(5):  # Repite 5 veces para cubrir la pantalla
             speed = 1
             for image in self.images:
-                screen.blit(image, ((x * self.bg_width) - scroll * speed, 0))
+                screen.blit(image, ((x * self.screen_width) - scroll * speed, 0))
                 speed += 0.2
 
 # Clase para manejar el suelo
 class Ground:
     def __init__(self, image_path, screen_width, screen_height):
-        self.image = pygame.image.load(image_path).convert_alpha()
+        # Redimensiona la imagen del suelo al ancho de la pantalla
+        self.image = pygame.transform.scale(
+            pygame.image.load(image_path).convert_alpha(),
+            (screen_width, screen_height // 4)  # Ajusta el alto relativo al tamaño de la ventana
+        )
         self.ground_width = self.image.get_width()
         self.ground_height = self.image.get_height()
         self.screen_width = screen_width
@@ -41,7 +48,7 @@ class Ground:
             screen.blit(self.image, ((x * self.ground_width) - scroll * 2.5, self.screen_height - self.ground_height))
 
 # Inicializa los objetos principales
-background = Background([f"plx-{i}.png" for i in range(1, 6)], SCREEN_WIDTH)
+background = Background([f"plx-{i}.png" for i in range(1, 6)], SCREEN_WIDTH, SCREEN_HEIGHT)
 ground = Ground("ground.png", SCREEN_WIDTH, SCREEN_HEIGHT)
 
 # Variables del juego
@@ -49,8 +56,11 @@ scroll = 0  # Desplazamiento inicial de la pantalla
 clock = pygame.time.Clock()  # Reloj para controlar FPS
 run = True  # Controla el bucle principal del juego
 
-# Cargar la imagen 'computer.png' para mostrar después de 10 segundos de scroll
-reveal_image = pygame.image.load("ganador.png").convert_alpha()
+# Cargar la imagen 'trof.png' para mostrar después de 10 segundos de scroll
+reveal_image = pygame.transform.scale(
+    pygame.image.load("trof.png").convert_alpha(),
+    (SCREEN_WIDTH // 5, SCREEN_HEIGHT // 5)  # Redimensiona la imagen a un cuarto del tamaño de la pantalla
+)
 image_displayed = False  # Variable para controlar si la imagen ya ha sido mostrada
 scroll_start_time = None  # Tiempo de inicio del scroll
 
@@ -86,3 +96,4 @@ while run:
 
 # Finaliza pygame
 pygame.quit()
+
