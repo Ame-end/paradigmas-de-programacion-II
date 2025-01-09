@@ -13,6 +13,12 @@ FPS = 60  # Límite de fotogramas por segundo
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("LapRun")
 
+# Configuración de la música de fondo
+pygame.mixer.init()
+pygame.mixer.music.load("musica.mp3")  # Reemplaza con la ruta de tu archivo de música
+pygame.mixer.music.set_volume(3)  # Ajusta el volumen (0.0 a 1.0)
+pygame.mixer.music.play(-1)  # Reproduce en bucle infinito
+
 # Clase para manejar el fondo con efecto de paralaje
 class Background:
     def __init__(self, images, screen_width, screen_height):
@@ -59,7 +65,7 @@ run = True  # Controla el bucle principal del juego
 # Cargar la imagen 'trof.png' para mostrar después de 10 segundos de scroll
 reveal_image = pygame.transform.scale(
     pygame.image.load("trof.png").convert_alpha(),
-    (SCREEN_WIDTH // 5, SCREEN_HEIGHT // 5)  # Redimensiona la imagen a un cuarto del tamaño de la pantalla
+    (SCREEN_WIDTH // 4, SCREEN_HEIGHT // 4)  # Redimensiona la imagen a un cuarto del tamaño de la pantalla
 )
 image_displayed = False  # Variable para controlar si la imagen ya ha sido mostrada
 scroll_start_time = None  # Tiempo de inicio del scroll
@@ -96,4 +102,3 @@ while run:
 
 # Finaliza pygame
 pygame.quit()
-
