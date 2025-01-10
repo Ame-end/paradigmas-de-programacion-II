@@ -195,7 +195,7 @@ while run:
     elif keys[pygame.K_LEFT] and scroll > 0:
         scroll -= 5
 
-    # Dibuja todo
+    # Dibuja to.do
     screen.fill((0, 0, 0))  # Fondo negro
     background.draw(screen, scroll)
     ground.draw(screen, scroll)
